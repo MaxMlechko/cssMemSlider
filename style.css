@@ -19,6 +19,8 @@ body{
       repeating-linear-gradient(23deg, red 50px, orange 100px,
         rgb(255, 230, 0) 150px, green 200px, blue 250px,
         rgb(93, 0, 130) 300px, violet 350px, red 370px);
+    background-attachment: fixed;
+    background-size: cover;
 }
 
 
@@ -35,6 +37,12 @@ body{
 
 .slides{
     display: flex;
+    gap: 640px;
+    transition: 1s;
+}
+
+img{
+    border-radius: 10px;
 }
 
 h2{
@@ -45,9 +53,11 @@ h2{
 }
 
 .slider-controls{
-    width: 100%;
-    text-align: right;
+    width: auto;
     z-index: 5;
+    position: absolute;
+    top: 605px;
+    right: calc((100% - 640px)/2);
 }
 
 .slider-controls label {
@@ -69,5 +79,18 @@ input{
 .slide-radio2:checked ~ .slider-controls .page2, 
 .slide-radio3:checked ~ .slider-controls .page3, 
 .slide-radio4:checked ~ .slider-controls .page4 {
-  background: rgba(255,255,255,1)
+    background: rgba(255,255,255,1)
+}
+
+.slide-radio1:checked ~ .slides {
+    transform: translateX(0px);
+}
+.slide-radio2:checked ~ .slides {
+    transform: translateX(-1280px);
+}
+.slide-radio3:checked ~ .slides {
+    transform: translateX(-2560px);
+}
+.slide-radio4:checked ~ .slides {
+    transform: translateX(-3840px);
 }
