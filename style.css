@@ -60,26 +60,43 @@ h2{
     right: calc((100% - 640px)/2);
 }
 
-.slider-controls label {
+.slider-controls .circle {
     width: 20px;
     height: 20px;
     border-radius: 50%;
     display: inline-block;
     background: rgba(255,255,255,0.2);
-    margin: 10px;
+    box-sizing: border-box;
     border: solid 1px rgba(255,255,255,0.4);
+    margin: 7px;
+    transform: scale(1);
+    transition: 0.5s;
+}
+
+.circle:hover{
+    transform: scale(1.2);
+    transition: 0.5s;
+    border: solid 2px#FFF;
+}
+
+label{
+    display: inline-block;
+    width: 34px;
+    height: 34px;
     cursor: pointer;
+    margin: 15px 0px;
 }
 
 input{
     display: none;
 }
 
-.slide-radio1:checked ~ .slider-controls .page1, 
-.slide-radio2:checked ~ .slider-controls .page2, 
-.slide-radio3:checked ~ .slider-controls .page3, 
-.slide-radio4:checked ~ .slider-controls .page4 {
-    background: rgba(255,255,255,1)
+.slide-radio1:checked ~ .slider-controls .page1 .circle, 
+.slide-radio2:checked ~ .slider-controls .page2 .circle, 
+.slide-radio3:checked ~ .slider-controls .page3 .circle, 
+.slide-radio4:checked ~ .slider-controls .page4 .circle {
+    background: rgba(255,255,255,0.6);
+    border: solid 2px rgba(0,0,0,0.4);
 }
 
 .slide-radio1:checked ~ .slides {
