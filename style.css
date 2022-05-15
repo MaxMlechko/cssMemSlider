@@ -1,0 +1,73 @@
+html{
+    height: 100%;
+}
+
+body{
+    width: 100%;
+    margin: 0%;
+    background:
+      repeating-linear-gradient(190deg, rgba(255, 0, 0, 0.5) 40px,
+        rgba(255, 153, 0, 0.5) 80px, rgba(255, 255, 0, 0.5) 120px,
+        rgba(0, 255, 0, 0.5) 160px, rgba(0, 0, 255, 0.5) 200px,
+        rgba(75, 0, 130, 0.5) 240px, rgba(238, 130, 238, 0.5) 280px,
+        rgba(255, 0, 0, 0.5) 300px),
+      repeating-linear-gradient(-190deg, rgba(255, 0, 0, 0.5) 30px,
+        rgba(255, 153, 0, 0.5) 60px, rgba(255, 255, 0, 0.5) 90px,
+        rgba(0, 255, 0, 0.5) 120px, rgba(0, 0, 255, 0.5) 150px,
+        rgba(75, 0, 130, 0.5) 180px, rgba(238, 130, 238, 0.5) 210px,
+        rgba(255, 0, 0, 0.5) 230px),
+      repeating-linear-gradient(23deg, red 50px, orange 100px,
+        rgb(255, 230, 0) 150px, green 200px, blue 250px,
+        rgb(93, 0, 130) 300px, violet 350px, red 370px);
+}
+
+
+.slider{
+    margin: 60px auto 0px auto;
+    width: 640px;
+    height: 595px;
+    opacity: 1;
+    z-index: 0;
+    display: flex;
+    flex-direction: row;
+    overflow-x: hidden;
+}
+
+.slides{
+    display: flex;
+}
+
+h2{
+    color: #FFF;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin: 10px 0px;
+    text-shadow: 2px 2px 2px #000;
+}
+
+.slider-controls{
+    width: 100%;
+    text-align: right;
+    z-index: 5;
+}
+
+.slider-controls label {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    margin: 10px;
+    border: solid 1px rgba(255,255,255,0.4);
+    cursor: pointer;
+}
+
+input{
+    display: none;
+}
+
+.slide-radio1:checked ~ .slider-controls .page1, 
+.slide-radio2:checked ~ .slider-controls .page2, 
+.slide-radio3:checked ~ .slider-controls .page3, 
+.slide-radio4:checked ~ .slider-controls .page4 {
+  background: rgba(255,255,255,1)
+}
