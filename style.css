@@ -5,31 +5,15 @@ html{
 body{
     width: 100%;
     margin: 0%;
-    background:
-      repeating-linear-gradient(190deg, rgba(255, 0, 0, 0.5) 40px,
-        rgba(255, 153, 0, 0.5) 80px, rgba(255, 255, 0, 0.5) 120px,
-        rgba(0, 255, 0, 0.5) 160px, rgba(0, 0, 255, 0.5) 200px,
-        rgba(75, 0, 130, 0.5) 240px, rgba(238, 130, 238, 0.5) 280px,
-        rgba(255, 0, 0, 0.5) 300px),
-      repeating-linear-gradient(-190deg, rgba(255, 0, 0, 0.5) 30px,
-        rgba(255, 153, 0, 0.5) 60px, rgba(255, 255, 0, 0.5) 90px,
-        rgba(0, 255, 0, 0.5) 120px, rgba(0, 0, 255, 0.5) 150px,
-        rgba(75, 0, 130, 0.5) 180px, rgba(238, 130, 238, 0.5) 210px,
-        rgba(255, 0, 0, 0.5) 230px),
-      repeating-linear-gradient(23deg, red 50px, orange 100px,
-        rgb(255, 230, 0) 150px, green 200px, blue 250px,
-        rgb(93, 0, 130) 300px, violet 350px, red 370px);
+    background-image: linear-gradient(to right, #870000, #830081);
     background-attachment: fixed;
     background-size: cover;
 }
 
 
 .slider{
-    margin: 60px auto 0px auto;
+    margin: 20px auto 0px auto;
     width: 640px;
-    height: 595px;
-    opacity: 1;
-    z-index: 0;
     display: flex;
     flex-direction: row;
     overflow-x: hidden;
@@ -43,6 +27,8 @@ body{
 
 img{
     border-radius: 10px;
+    width: 640px;
+    height: 640px;
 }
 
 h2{
@@ -56,7 +42,7 @@ h2{
     width: auto;
     z-index: 5;
     position: absolute;
-    top: 605px;
+    top: 650px;
     right: calc((100% - 640px)/2);
 }
 
