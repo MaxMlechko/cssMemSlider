@@ -16,6 +16,7 @@ body{
     width: 640px;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     overflow-x: hidden;
 }
 
@@ -23,6 +24,7 @@ body{
     display: flex;
     gap: 640px;
     transition: 1s;
+    order: 1;
 }
 
 img{
@@ -31,22 +33,34 @@ img{
     height: 640px;
 }
 
+.description-container{
+    order: 2;
+    width: 492px;
+    overflow: hidden;
+}
+
+.description{
+    display: flex;
+    gap: 200px;
+    transition: 1s;
+}
+
 h2{
     color: #FFF;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     margin: 10px 0px;
     text-shadow: 2px 2px 2px #000;
+    width: 492px;
+    flex-shrink: 0;
 }
 
 .slider-controls{
     width: auto;
-    z-index: 5;
-    position: absolute;
-    top: 650px;
+    order: 3;
     right: calc((100% - 640px)/2);
 }
 
-.slider-controls .circle {
+.circle {
     width: 20px;
     height: 20px;
     border-radius: 50%;
@@ -65,12 +79,17 @@ h2{
     border: solid 2px#FFF;
 }
 
+.circle:active{
+    background: #FFF;
+    transform: scale(1);
+}
+
 label{
     display: inline-block;
     width: 34px;
     height: 34px;
     cursor: pointer;
-    margin: 15px 0px;
+    margin: 12px 0px;
 }
 
 input{
@@ -95,6 +114,19 @@ input{
 }
 .slide-radio4:checked ~ .slides {
     transform: translateX(-3840px);
+}
+
+.slide-radio1:checked ~ .description-container .description {
+    transform: translateX(0px);
+}
+.slide-radio2:checked ~ .description-container .description {
+    transform: translateX(-692px);
+}
+.slide-radio3:checked ~ .description-container .description {
+    transform: translateX(-1384px);
+}
+.slide-radio4:checked ~ .description-container .description {
+    transform: translateX(-2076px);
 }
 
 @media (max-width: 1000px){
@@ -129,6 +161,10 @@ input{
     .slide-radio4:checked ~ .slides {
         transform: translateX(-3000px);
     }
+
+    .description-container{
+        width: 352px;
+    }
 }
 
 @media (max-width: 800px){
@@ -147,12 +183,10 @@ input{
     }
 
     .slider-controls{
-        top: 320px;
-        right: calc((100% - 148px)/2);
+        margin: 0px auto;
     }
 
     h2{
-        margin-top: 60px;
         font-size: 20px;
     }
 
@@ -167,5 +201,26 @@ input{
     }
     .slide-radio4:checked ~ .slides {
         transform: translateX(-1800px);
+    }
+
+    .slider-controls{
+        order: 2;
+    }
+
+    .description-container{
+        order: 3;
+    }
+
+    .circle {
+        width: 15px;
+        height: 15px;
+    }
+
+    label{
+        margin: 0px;
+    }
+
+    h2{
+        margin: 0px;
     }
 }
